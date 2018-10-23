@@ -1,0 +1,47 @@
+@mixin textStyle
+  p
+    color: #636363
+    font-family: 'Open Sans', sans-serif
+    font-size: 16px
+    font-weight: 400
+    line-height: 30px
+    padding-top: 20px
+
+@mixin titleStyle
+  h1
+    color: #2e4265
+    font-family: 'Work Sans', sans-serif
+    font-size: 63px
+    font-weight: 700
+    line-height: 75px
+
+@mixin button
+  button
+    width: 200px
+    height: 58px
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+    border-radius: 28px
+    border: none
+    background-color: #d68c6f
+    color: #ffffff
+    font-family: 'Work Sans', sans-serif
+    font-size: 18px
+    font-weight: 700
+    line-height: 20px
+    text-align: center
+    cursor: pointer
+    margin-top: 40px
+
+@mixin ul-style($value, $color, $fontSize)
+  ul
+    display: grid
+    grid-template-columns: repeat($value, minmax(100px, 1fr))
+    li
+      list-style-type: none
+      justify-self: center
+      a
+        text-decoration: none
+        color: $color
+        font-size: $fontSize
+    @content
+

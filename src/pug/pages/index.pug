@@ -1,0 +1,79 @@
+html(lang="ru-ru")
+head
+  title Duck Site
+  link(rel="stylesheet" type='text/css' href="static/css/main.css")
+body
+  mixin navMenuli(title, href)
+    li 
+      a(href= href)= title
+  div#main
+    section.section1#section1
+      header
+        div.section1#label
+          img(src='static/img/DuckPack_label.png') 
+        ul.section1
+          +navMenuli('Home', '#') 
+          +navMenuli('About', '#') 
+          +navMenuli('Productivity', '#') 
+          +navMenuli('Price', '#') 
+          +navMenuli('Faq', '#')
+          +navMenuli('Contact', '#') 
+          li.menu
+            img(src='static/img/menu.png') 
+      div.content.section1
+        h1 We Bring Emotion To Your Product
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. 
+        button Odred Now
+    section.section2#section2
+      div.duckImg.section2
+        img.duck.section2(src='static/img/section2Duck.png')
+      //-mixin section2Content
+      mixin section2Content(title, num, text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis nulla non erat ultricies suscipit. Nulla velit diam, condimentum id condimentum rutrum, suscipit quis mauris. Nam a porta turpis, non.")
+        div.contentInner#contentInner
+          div.title
+            span= num 
+            h1= title
+            img.title.section2(src='static/img/Layer_5.png')
+          p= text
+      div.content.section2
+        //-use mixin section2Content
+        +section2Content('Crested', '01')   
+        +section2Content('Muscovy', '02') 
+        +section2Content('Orpington', '03') 
+        +section2Content('Rouen', '04') 
+    section.section3#section3
+      div.Subscribe
+          h1 Subscribe
+          p Join us for all the latest Petfinder news and updates.
+          form
+            input(type='mail' placeholder='Enter your email Address')
+            button 
+              img.send.section3(src='static/img/send.png')
+      img(src='static/img/section3Duck.png')
+    section.section4#section4
+      //-mixin section4Content
+      mixin section4Content(title, price, img, text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it")
+        img(src= img)
+        div.contentInner.section4#contentInner4
+          h1.title.section4= title
+          div.price.section4
+            h1 $
+            h1= price
+            h1 /pic
+          p=text
+          button Odred Now
+      //-use mixin section2Content
+      +section4Content('Crested', '0.8', 'static/img/section4Background1.png')
+      +section4Content('Rouen', '0.8', 'static/img/section4Background2.png')
+      +section4Content('Muscovy', '0.8', 'static/img/section4Background3.png')
+    footer.footer#footer
+      h4 All Right Resurved By @DuckSpace
+      ul
+        +navMenuli('Home', '#') 
+        +navMenuli('About', '#') 
+        +navMenuli('Productivity', '#') 
+        +navMenuli('Price', '#') 
+        +navMenuli('Faq', '#')
+        +navMenuli('Contact', '#') 
+  script(src="static/js/libs.min.js")
+  script(src="static/js/main.js")
