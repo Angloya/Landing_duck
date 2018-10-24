@@ -18,6 +18,7 @@ body
   justify-content: center
   flex-direction: column
   align-items: center
+  background-color: #ffffff
 
 #section1 
   width: $width-section
@@ -144,11 +145,50 @@ body
   width: $width-section
   height: 1934px
   background-color: #ffffff
+  @include titleStyle
+  @include textStyle
+  @include button
+  display: grid
+  grid-template-rows: repeat(3, (100% / 3))
+  padding-bottom: 60px 
+  .content
+    display: grid
+    grid-template-columns: 40% 60% 
+    overflow: hidden
+    .img 
+      grid-column: 1/1
+      img 
+        margin-left: -200px
+        z-index: 4
+    .price 
+      display: flex
+      grid-column: 2/2
+      padding-top: 50px
+      padding-bottom: 50px
+      h1
+        color: #d68c6f
+        font-family: 'Work Sans', sans-serif
+        font-size: 34px
+        font-weight: 700
+        line-height: 13.59px
+        font-weight: 700
+      .pic
+        font-size: 27px
+        font-weight: 300
 
-#footer 
+footer
   width: $width-section
   height: 80px
   background-color: #2e4265
   display: grid
-  grid-template-columns: 40% 60%
+  grid-template-columns: 40% 60% 
+  @include ul-style(7, #ffffff, 16px)
+  h4 
+    opacity: 0.3
+    color: #ffffff
+    font-size: 16px
+    font-weight: 300
+    line-height: 20px
+    justify-self: center
+  
     
