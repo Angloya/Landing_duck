@@ -14,10 +14,10 @@ $.path.tasks.forEach(taskPath => {
 })
 
 $.gulp.task('default',$.gulp.series(
-  $.gulp.parallel('pug:dev','scriptsLib:dev','scripts:dev', 'img:dev', 'sass:dev'),
+  $.gulp.parallel('pug:dev','scripts:dev', 'img:dev', 'sass:dev'),
   $.gulp.parallel('watch:dev', 'serve:dev')
 ))
 $.gulp.task('build',$.gulp.series(
-  $.gulp.parallel('pug:build','sass:build','scriptsLib:build','scripts:build', 'img:build', 'svg:build'),
+  $.gulp.parallel('pug:build','sass:build','scripts:build', 'img:build', 'svg:build'),
   $.gulp.parallel('watch:build', 'serve:build')
 ))
