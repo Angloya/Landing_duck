@@ -18,6 +18,6 @@ $.gulp.task('default',$.gulp.series(
   $.gulp.parallel('watch:dev', 'serve:dev')
 ))
 $.gulp.task('build',$.gulp.series(
-  $.gulp.parallel('pug:build','sass:build','scripts:build', 'img:build', 'svg:build'),
+  $.gulp.parallel('pug:build','sass:build','scripts:build','img:build', 'svg:build'),
   $.gulp.parallel('watch:build', 'serve:build')
 ))

@@ -2,11 +2,13 @@
 @import "reset"
 @import "variables"
 @import 'mixins'
+@import "media"
 @import "libs"
 
 * 
   margin: auto 0
-
+  body 
+    background-color: blue
 body 
   background-color: #ffffff
   font-family: 'Open Sans', sans-serif
@@ -37,6 +39,9 @@ body
     grid-template-columns: 40% 60%
     padding-top: 43px
     padding-right: 100px
+    @media screen and (min-width: 320px) and (max-width: 1024px)
+        font-size: 25px
+        grid-template-columns: 20% 80%
     #label
       justify-self: center
       width: 106px
@@ -53,6 +58,9 @@ body
     justify-self: center
     align-self: center
     padding-left: 200px
+    @media screen and (min-width: 320px) and (max-width: 1024px)
+      grid-column: 0/2
+      grid-row: 2/2
     @include button 
     @include titleStyle
     @include textStyle
@@ -106,7 +114,7 @@ body
   display: grid
   grid-template-columns: 60% 40%
   justify-items: center
-  .Subscribe
+  .content
     text-align: center
     justify-self: flex-end
     @include titleStyle
@@ -190,5 +198,16 @@ footer
     font-weight: 300
     line-height: 20px
     justify-self: center
-  
-    
+   
+@media screen and (min-width: 320px) and (max-width: 1024px)
+  #section1,#section2,#section3,#section4,footer
+    width: 100%
+  #section2
+    padding-left: 50px
+  footer
+    grid-template-columns: 20% 80% 
+  #section4
+    .content
+      .img
+        img 
+          margin-left: -70%
